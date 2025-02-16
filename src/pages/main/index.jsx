@@ -183,6 +183,7 @@ const NewsPage = () => {
       description: selectedCourses.description,
       price: selectedCourses.price,
     });
+    window.location.reload();
     setCourseModalType(null);
   };
   
@@ -190,7 +191,7 @@ const NewsPage = () => {
   return (
     
     <div className="w-[100%] mx-auto p-3">
-         <div className="max-w-4xl mx-auto p-6">
+         <div className="max-w-4xl mx-auto p-1">
       <h1 className="text-[18px] sm:text-[24px] lg:text-[26px] font-bold text-center mb-6">📢 Панель новостей и внеклассная деятельность</h1>
 
       <div className="flex flex-col items-start sm:flex-row gap-1 sm:gap-2 md:gap-3 lg:gap-4">
