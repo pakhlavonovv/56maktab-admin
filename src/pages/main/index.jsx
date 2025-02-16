@@ -256,7 +256,7 @@ const NewsPage = () => {
     {courseModalType === 'delete' && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white w-[80%] sm:w-[70%] md:w-[60%] lg:w-[50%] xl:w-[40%] p-6 rounded-lg shadow-md">
-            <p>Вы уверены, что хотите удалить эту новость?</p>
+            <p>Вы уверены, что хотите удалить этот курс?</p>
             <div className="flex space-x-4 mt-4">
               <button onClick={() => handleCourseDelete(selectedCourses.id)} className="bg-red-500 text-white px-4 py-2 rounded">Да</button>
               <button onClick={() => setCourseModalType(null)} className="bg-gray-500 text-white px-4 py-2 rounded">Нет</button>
