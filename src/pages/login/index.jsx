@@ -17,8 +17,10 @@ const Index = () => {
       if(login === "56maktab_zam_direktor@gmail.com"){
         navigate('/main')
         window.localStorage.setItem("log", "zam_direktor")
+      } else if(login === "abdullokh@gmail.com"){
+           navigate('/main')
       } else {
-           navigate('/home')
+        navigate('/')
       }
    
     }).catch(error => {
