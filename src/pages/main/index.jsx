@@ -222,7 +222,7 @@ const NewsPage = () => {
       </div>
 
       <h2 className="text-lg font-semibold mb-4">📜 Последние новости</h2>
-      <div className="space-y-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-center gap-2">
         {news.map((item) => (
           <div key={item.id} className="bg-white w-full p-4 rounded-lg shadow-md">
             <img src={item.imageUrl} alt={item.title} className="w-full h-48 object-cover rounded-md mb-2" />
@@ -238,7 +238,7 @@ const NewsPage = () => {
       </div>
       <br /><br /> <hr />
        <h2 className="text-lg font-semibold mt-4 mb-4">📜 Курсы</h2>
-      <div className="space-y-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-center gap-2">
         {courses.map((item) => (
           <div key={item.id} className="bg-white w-full p-4 rounded-lg shadow-md">
             <img src={item.imageUrl} alt={item.courseName} className="w-full h-48 object-cover rounded-md mb-2" />
