@@ -22,6 +22,16 @@ const NewsPage = () => {
   const [loading, setLoading] = useState(false)
   const [loadingCourse, setLoadingCourse] = useState(false)
 
+   const subjects = [
+    { id: 1, name: "Matematika", link: "https://bilimlar.uz/9-sinf-algebra-fanidan-choraklik-testlar-toplami/" },
+    { id: 2, name: "Fizika", link: "https://ilmlar.uz/fizika-fanidan-9-11-sinf-imtihon-biletlari-va-javoblari/?utm_source=chatgpt.com" },
+    { id: 3, name: "Kimyo", link: "https://ru.scribd.com/document/717021707/9-sinf-kimyo-fanidan-testlar-4" },
+    { id: 4, name: "Biologiya", link: "https://bilimlar.uz/5-6-7-8-9-10-11-sinflar-uchun-biologiya-fanidan-testlar/#9-sinf_Biologiya" },
+    { id: 5, name: "Ingliz tili", link: "https://kamolov.uz/en/?p=910/" },
+    { id: 6, name: "Tarix", link: "https://ilmlar.uz/9-sinf-tarix-fanidan-choraklik-testlar/?utm_source=chatgpt.com" },
+    { id: 7, name: "Adabiyot", link: "https://ilmlar.uz/9-sinf-adabiyot-fanidan-1-2-3-4-chorak-testlar/?utm_source=chatgpt.com" },
+    { id: 8, name: "Ona tili", link: "https://ilmlar.uz/9-sinf-adabiyot-fanidan-1-2-3-4-chorak-testlar/" },
+  ];
   const uploadToImgBB = async (file) => {
     const apiKey = import.meta.env.VITE_IMGBB_API_KEY;
     const formData = new FormData();
@@ -192,7 +202,21 @@ const NewsPage = () => {
     
     <div className="w-[100%] mx-auto p-3">
          <div className="max-w-4xl mx-auto p-1">
-      <h1 className="text-[18px] sm:text-[24px] lg:text-[26px] font-bold text-center mb-6">📢 Панель новостей и внеклассная деятельность</h1>
+           <div className="mb-8">
+        <h2 className="text-[20px] sm:text-[25px] font-bold text-center mb-4">📚 Test uchun fanni tanlang</h2>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+          {subjects.map(subject => (
+            <a
+              key={subject.id}
+              href={subject.link}
+              className="bg-white p-4 rounded-lg shadow-md flex flex-col items-center justify-center hover:shadow-lg transition"
+            >
+              <span className="text-sm font-medium text-center">{subject.name}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+      <h1 className="text-[18px] sm:text-[24px] lg:text-[26px] font-bold text-center mb-6">Панель новостей и внеклассная деятельность</h1>
 
       <div className="flex flex-col items-start sm:flex-row gap-1 sm:gap-2 md:gap-3 lg:gap-4">
       <div className="bg-white w-[100%] p-6 rounded-lg shadow-md mb-8">

@@ -1,32 +1,22 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { onAuthStateChanged } from "firebase/auth";
-import { auth } from '../../firbase.config';
 import Loading from "../loading";
 
 const RequireAuth = ({ children }) => {
-  const [currentUser, setCurrentUser] = useState(null);
   const navigate = useNavigate();
+  const user = localStorage.getItem("user");
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        setCurrentUser(user);  
-      } else {
-        setCurrentUser(null);
-        navigate("/");  
-      }
-    });
+    if (!user) navigate("/");
+  }, [user, navigate]);
 
-    return () => unsubscribe(); 
-  }, [navigate]);
-
-  if (currentUser === null) {
+  if (!user) {
     return <div className="flex items-center justify-center min-h-screen">
-      <Loading/>
-    </div>; 
+      <Loading />
+    </div>;
   }
 
-  return children;  
+  return children;
 };
-export default RequireAuth
+
+export default RequireAuth;
