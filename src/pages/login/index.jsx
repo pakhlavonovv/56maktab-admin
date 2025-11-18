@@ -48,14 +48,14 @@ const Index = () => {
   return (
     <div className='flex flex-col gap-[30px] bg-white h-[100vh]'>
       <div className="container flex justify-center items-start md:justify-start lg:w-[70%]">
-        <img src="https://static.emaktab.uz/img/logotypes/uzlogotype.png" className='w-[150px] md:w-[180px] lg:mt-[30px] ml-[10px]' alt="Kundalik com logo" />
+        <img src="https://static.emaktab.uz/img/logotypes/uzlogotype.png" className='w-[150px] md:w-[180px] lg:mt-[30px]' alt="Kundalik com logo" />
       </div>
       <div className="h-[50vh] w-[100%] flex flex-col items-center gap-3 sm:gap-5 md:gap-7 lg:justify-center lg:gap-0">
         <div className="w-full flex flex-col items-center md:items-start md:w-[70%] gap-6">
         <div className="bg-[#303C84] h-[76px] w-full flex items-center justify-center md:justify-start p-2 md:p-8">
           <h1 className='text-[22px] text-start text-white font-semibold sm:text-[28px] md:text-[32px]'>Kirish eMaktab</h1>
         </div>
-          <form onSubmit={handleSubmit} className='w-[90%] pl-4 sm:w-[65%] md:w-[70%] lg:w-[45%] xl:w-[40%] flex flex-col gap-4 sm:gap-3'>
+          <form onSubmit={handleSubmit} className='w-[90%] sm:w-[65%] md:w-[70%] lg:w-[45%] xl:w-[40%] flex flex-col gap-4 sm:gap-3'>
             <p className='font-bold'>Login</p>
             <input 
               onChange={e => setLogin(e.target.value)} 
